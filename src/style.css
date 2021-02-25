@@ -102,9 +102,10 @@ a {
   background-color: #ffffff;
 }
 
-#content-in * {
+#content-in div {
   display: block;
 }
+
 
 #banner {
   margin-top: 10px;
@@ -120,7 +121,7 @@ a {
 }
 
 /* Posting */
-.inline > * {
+.inline  * {
   display: inline-block;
 }
 
