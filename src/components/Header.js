@@ -11,10 +11,10 @@ const useStyles = makeStyles((theme) => ({
     position: "absolute",
     width: "70px",
     height: "32px",
-    left: "1181px", 
+    left: "1181px",
     top: "100px",
     padding: theme.spacing(1),
-    color: "#00462A",
+    color: theme.palette.primary,
   },
 }));
 
@@ -23,12 +23,15 @@ const Header = ({ history }) => {
 
   return (
     <header id="header">
-      <Link to="/" id="logo" ><img src={logo} /></Link>
+      <Link to="/" id="logo">
+        <img src={logo} />
+      </Link>
       <Button
         className={classes.loginBtn}
         onClick={() => history.push("/signin")}
+        variant="outlined"
       >
-        로그인
+        <p id="login-text">로그인</p>
       </Button>
     </header>
   );

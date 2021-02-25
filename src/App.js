@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 import "./style.css";
-import { Home, Posting, SignUp, SignIn, FindID, FindPW } from "./pages/index";
+import { Home, Posting, Category, SignUp, SignIn, FindID, FindPW } from "./pages/index";
 
 const theme = createMuiTheme({
   palette: {
@@ -26,6 +26,9 @@ const App = () => {
             <Route path="/findpw" exact component={FindPW} />
 
             <Route path="/posting" exact component={Posting} />
+
+            {/* 게시판 조회 */}
+            <Route path="/category/:num" component={Category} />
           </Switch>
         </div>
       </Router>

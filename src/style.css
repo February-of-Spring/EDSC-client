@@ -1,3 +1,7 @@
+:root {
+  --main-color: #00462a;
+}
+
 * {
   margin: 0px;
   padding: 0px;
@@ -35,7 +39,7 @@ a {
   float: left;
   width: 260px;
   height: 900px;
-  background: #00462a;
+  background: var(--main-color);
 }
 
 #navbar ul li p {
@@ -59,6 +63,13 @@ a {
   border: 0;
   outline: 0;
   background: #ffffff;
+}
+
+#login-text {
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 16px;
+  color: var(--main-color);
 }
 
 /* navbar */
@@ -106,23 +117,75 @@ a {
   display: block;
 }
 
-
-#banner {
-  margin-top: 10px;
-  width: 880px;
-  height: 604px;
-}
-
 .content-name {
   font-weight: bold;
   font-size: 32px;
   line-height: 40px;
-  color: #00462a;
+  color: var(--main-color);
+}
+
+/* Home */
+#banner {
+  margin-top: 10px;
+  margin-bottom: 28px;
+  width: 880px;
+  height: 604px;
+}
+
+#latest-posts {
+  width: 880px;
+  margin: 48px 0px;
+}
+
+#latest-posts h1 {
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 32px;
+  color: var(--main-color);
+}
+
+#viewmore {
+  position: absolute;
+  right: 0px;
+  line-height: 32px;
+}
+
+#viewmore-text {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  color: #828282;
+}
+
+#viewmore-img {
+  width: 24px;
+  height: 24px;
+}
+
+#latest-posts-content h2 {
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 24px;
+  color: #333333;
+  margin-bottom: 16px;
+}
+
+#latest-posts-content p {
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+  color: #333333;
+}
+
+#latest-posts-content div {
+  width: 816px;
+  height: 72px;
 }
 
 /* Posting */
-.inline  * {
+.inline * {
   display: inline-block;
+  vertical-align: middle;
 }
 
 #posting-content > * {

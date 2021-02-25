@@ -97,7 +97,7 @@ const SideBar = () => {
                 return (
                   <li key={child.id}>
                     {
-                      <Link className="navbar-sub" exact to="/">
+                      <Link className="navbar-sub" to={`/category/${child.id}`}>
                         <p>
                           {child.name} ({child.postNum})
                         </p>
