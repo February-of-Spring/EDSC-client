@@ -1,4 +1,5 @@
 export { default as Home } from './Home';
+export { default as Post } from './Post';
 export { default as Posting } from './Posting';
 export { default as Category } from './Category'; // 한 카테고리 내
 /* 사용자 인증 */

@@ -63,16 +63,16 @@ const Category = ({ history }) => {
 
   return (
     <MainLayout>
-      <div className="inline">
+      <div id="category-title">
         <p className="content-name">{level2 || level1}</p>
         <Button className={classes.postBtn} onClick={() => {history.push("/posting")}}>글쓰기</Button>
       </div>
       {postLists.postList.map((post) => {
         return (
-          <div key={post.id} id="latest-posts">
+          <div key={post.id} id="posts-card">
             <Card
               className={classes.card}
-              id="latest-posts-content"
+              id="latest-posts-card"
               variant="outlined"
             >
               <Link to={`/posts/${post.id}`}>

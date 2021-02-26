@@ -89,7 +89,7 @@ const Home = () => {
 
             <Card
               className={classes.card}
-              id="latest-posts-content"
+              id="latest-posts-card"
               variant="outlined"
             >
               <Link to={`/posts/${post.id}`}>

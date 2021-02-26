@@ -26,17 +26,14 @@ const useStyles = makeStyles((theme) => ({
   card: {
     borderRadius: "8px",
     boxShadow: " 0px 0px 4px rgba(0, 0, 0, 0.1)",
-    marginTop: "16px",
     padding: "32px 30px",
   },
   loginBtn: {
     position: "absolute",
-    width: "70px",
     height: "32px",
     left: "1181px",
     top: "100px",
     padding: theme.spacing(1),
-    color: theme.palette.primary,
   },
 }));
 
