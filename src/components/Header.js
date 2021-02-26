@@ -4,19 +4,7 @@ import logo from "../image/logo.png";
 import Button from "@material-ui/core/Button";
 import { withRouter } from "react-router-dom";
 import { Link } from "react-router-dom";
-import { makeStyles } from "@material-ui/core/styles";
-
-const useStyles = makeStyles((theme) => ({
-  loginBtn: {
-    position: "absolute",
-    width: "70px",
-    height: "32px",
-    left: "1181px",
-    top: "100px",
-    padding: theme.spacing(1),
-    color: theme.palette.primary,
-  },
-}));
+import useStyles from "../Style";
 
 const Header = ({ history }) => {
   const classes = useStyles();

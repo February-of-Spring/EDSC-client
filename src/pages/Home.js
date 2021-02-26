@@ -1,19 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { makeStyles } from "@material-ui/core/styles";
 import { Card } from "@material-ui/core";
 import MainLayout from "../components/MainLayout";
+import useStyles from "../Style";
 import banner from "../image/banner.png";
 import vector from "../image/vector.png";
-
-const useStyles = makeStyles({
-  card: {
-    borderRadius: "8px",
-    boxShadow: " 0px 0px 4px rgba(0, 0, 0, 0.1)",
-    marginTop: "16px",
-    padding: "32px 30px",
-  },
-});
 
 const Home = () => {
   const classes = useStyles();
@@ -90,10 +81,7 @@ const Home = () => {
           <div key={post.id} id="latest-posts">
             <div className="inline">
               <h1>{post.category.name}</h1>
-              <Link
-                id="viewmore"
-                to={`/category/${post.category.parentCategoryId}`}
-              >
+              <Link id="viewmore" to={`/category/${post.category.name}`}>
                 <p id="viewmore-text">더보기</p>
                 <img id="viewmore-img" src={vector} />
               </Link>
@@ -104,10 +92,12 @@ const Home = () => {
               id="latest-posts-content"
               variant="outlined"
             >
-              <h2>{post.title}</h2>
-              <div>
-                <p>{post.content}</p>
-              </div>
+              <Link to={`/posts/${post.id}`}>
+                <h2>{post.title}</h2>
+                <div>
+                  <p>{post.content}</p>
+                </div>
+              </Link>
             </Card>
           </div>
         );

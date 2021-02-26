@@ -1,34 +1,10 @@
 import { React, useState } from "react";
-import MainLayout from "../components/MainLayout";
-import { makeStyles } from "@material-ui/core/styles";
 import { FormControl, Select, Button, TextField } from "@material-ui/core";
 import CameraAltOutlinedIcon from "@material-ui/icons/CameraAltOutlined";
 import LinkIcon from "@material-ui/icons/Link";
+import MainLayout from "../components/MainLayout";
+import useStyles from "../Style";
 
-const useStyles = makeStyles((theme) => ({
-  select: {
-    width: "340px",
-    height: "56px",
-  },
-  postBtn: {
-    position: "absolute",
-    top: "0px",
-    right: "0px",
-    width: "160px",
-    height: "40px",
-    padding: theme.spacing(1),
-    background: "#00462A",
-    color: "#ffffff",
-    fontSize: "16px",
-  },
-  attachBtn: {
-    width: "160px",
-    height: "56px",
-    fontSize: "16px",
-    lineHeight: "24px",
-    marginRight: "20px",
-  },
-}));
 
 const Posting = () => {
   const classes = useStyles();

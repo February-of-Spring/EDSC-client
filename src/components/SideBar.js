@@ -91,13 +91,18 @@ const SideBar = () => {
             <div key={category.id}>
               <hr className="navbar-hr" />
               <li className="navbar-main">
-                <p>{category.parent.name}</p>
+                <Link className="navbar-sub" to={`/category/${category.parent.name}`}>
+                  <p>{category.parent.name}</p>
+                </Link>
               </li>
               {category.child.map((child) => {
                 return (
                   <li key={child.id}>
                     {
-                      <Link className="navbar-sub" to={`/category/${child.id}`}>
+                      <Link
+                        className="navbar-sub"
+                        to={`/category/${category.parent.name}/${child.name}`}
+                      >
                         <p>
                           {child.name} ({child.postNum})
                         </p>
