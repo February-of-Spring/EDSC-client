@@ -11,16 +11,18 @@ const Header = ({ history }) => {
 
   return (
     <header id="header">
-      <Link to="/" id="logo">
-        <img src={logo} />
-      </Link>
-      <Button
-        className={classes.loginBtn}
-        onClick={() => history.push("/signin")}
-        variant="outlined"
-      >
-        <p id="login-text">로그인</p>
-      </Button>
+      <div id="header-container">
+        <Link to="/" id="logo">
+          <img src={logo} />
+        </Link>
+        <Button
+          className={classes.loginBtn}
+          onClick={() => history.push("/signin")}
+          variant="outlined"
+        >
+          <p id="login-text">로그인</p>
+        </Button>
+      </div>
     </header>
   );
 };

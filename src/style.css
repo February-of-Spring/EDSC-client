@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap");
 
 .App {
-  font-family: 'Noto Sans KR', sans-serif;
+  font-family: "Noto Sans KR", sans-serif;
 }
 
 :root {
@@ -23,53 +23,56 @@ a {
 
 /* 메인 레이아웃 */
 #wrapper {
+  position: relative;
   width: 96%;
   height: 100%;
   margin: 0 auto;
 }
 
 #header {
-  display: inline-block;
-  vertical-align: middle;
-  margin-left: 260px;
+  float: left;
+  position: fixed;
+  top: 0px;
+  left: 260px;
   width: 100%;
   height: 152px;
-  left: 260px;
-  top: 0px;
   background: #ffffff;
+  z-index :99999;
 }
 
 #navbar {
-  position: fixed;
-  top: 0px;
   float: left;
+  margin-right: 110px;
+  top: 0px;
   width: 260px;
   height: 900px;
   background: var(--main-color);
 }
 
-#navbar ul li p {
-  display: inline-block;
-  vertical-align: middle;
-}
-
 #content {
-  width: 100%;
-  height: 100vh;
   float: left;
+  width: 880px;
+  padding-top: 152px;
+  height: 100vh;
 }
 
 /* header */
-#logo {
+#header-container {
   position: absolute;
+  left:110px;
+  top: 96px;
+  width: 880px;
+  height: 40px;
+}
+
+#logo {
   width: 250px;
   height: 40px;
-  left: 370px;
-  top: 96px;
+  background: #ffffff;
   border: 0;
   outline: 0;
-  background: #ffffff;
 }
+
 
 #login-text {
   vertical-align: center;
@@ -84,6 +87,11 @@ a {
   position: absolute;
   top: 90px;
   margin: 30px;
+}
+
+#navbar ul li p {
+  display: inline-block;
+  vertical-align: middle;
 }
 
 .navbar-content li {
@@ -110,18 +118,8 @@ a {
   color: #ffffff;
 }
 
-/* content */
-#content-in {
-  position: absolute;
-  width: 880px;
-  left: 370px;
-  top: 184px;
-  background-color: #ffffff;
-}
 
-#content-in div {
-  display: block;
-}
+
 
 .content-name {
   font-weight: bold;
@@ -138,7 +136,9 @@ a {
   height: 604px;
 }
 
+
 #latest-posts {
+  position: relative;
   width: 880px;
   margin: 48px 0px;
 }
@@ -150,13 +150,25 @@ a {
   color: var(--main-color);
 }
 
+#latest-title {
+  display: inline-block;
+  width: 880px;
+  height: 32px;
+}
+
+#latest-title h1 {
+  float:left;
+}
+
 #viewmore {
   position: absolute;
   right: 0px;
+  float:left;
   line-height: 32px;
 }
 
 #viewmore-text {
+  float:left;
   font-style: normal;
   font-weight: bold;
   font-size: 16px;
@@ -164,6 +176,7 @@ a {
 }
 
 #viewmore-img {
+  float:left;
   width: 24px;
   height: 24px;
 }
@@ -244,7 +257,7 @@ a {
 #post-createdat {
   font-size: 16px;
   line-height: 40px;
-  color: #BDBDBD;
+  color: #bdbdbd;
 }
 
 #post-content {
@@ -252,11 +265,9 @@ a {
   height: 480px;
 }
 
-
 /* Category */
-#category-title {
+#category-title > * {
   display: inline-block;
   vertical-align: middle;
   margin-bottom: 48px;
 }
-

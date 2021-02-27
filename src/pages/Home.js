@@ -79,7 +79,7 @@ const Home = () => {
       {latestPosts.postList.map((post) => {
         return (
           <div key={post.id} id="latest-posts">
-            <div className="inline">
+            <div id="latest-title">
               <h1>{post.category.name}</h1>
               <Link id="viewmore" to={`/category/${post.category.name}`}>
                 <p id="viewmore-text">더보기</p>
