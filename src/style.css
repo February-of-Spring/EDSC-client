@@ -37,7 +37,7 @@ a {
   width: 100%;
   height: 152px;
   background: #ffffff;
-  z-index :99999;
+  z-index: 99999;
 }
 
 #navbar {
@@ -59,7 +59,7 @@ a {
 /* header */
 #header-container {
   position: absolute;
-  left:110px;
+  left: 110px;
   top: 96px;
   width: 880px;
   height: 40px;
@@ -72,7 +72,6 @@ a {
   border: 0;
   outline: 0;
 }
-
 
 #login-text {
   vertical-align: center;
@@ -118,16 +117,6 @@ a {
   color: #ffffff;
 }
 
-
-
-
-.content-name {
-  font-weight: bold;
-  font-size: 32px;
-  line-height: 40px;
-  color: var(--main-color);
-}
-
 /* Home */
 #banner {
   margin-top: 10px;
@@ -135,7 +124,6 @@ a {
   width: 880px;
   height: 604px;
 }
-
 
 #latest-posts {
   position: relative;
@@ -157,18 +145,18 @@ a {
 }
 
 #latest-title h1 {
-  float:left;
+  float: left;
 }
 
 #viewmore {
   position: absolute;
   right: 0px;
-  float:left;
+  float: left;
   line-height: 32px;
 }
 
 #viewmore-text {
-  float:left;
+  float: left;
   font-style: normal;
   font-weight: bold;
   font-size: 16px;
@@ -176,7 +164,7 @@ a {
 }
 
 #viewmore-img {
-  float:left;
+  float: left;
   width: 24px;
   height: 24px;
 }
@@ -206,9 +194,23 @@ a {
 }
 
 /* Posting */
-.inline * {
-  display: inline-block;
-  vertical-align: middle;
+#posting-container div {
+  display: block;
+}
+
+.content-title {
+  display: block;
+  width: 880px;
+  height: 40px;
+  margin: 32px 0px;
+}
+
+.content-name {
+  float: left;
+  font-weight: bold;
+  font-size: 32px;
+  line-height: 40px;
+  color: var(--main-color);
 }
 
 #posting-content > * {
@@ -265,9 +267,4 @@ a {
   height: 480px;
 }
 
-/* Category */
-#category-title > * {
-  display: inline-block;
-  vertical-align: middle;
-  margin-bottom: 48px;
-}
+

@@ -6,8 +6,7 @@ const useStyles = makeStyles((theme) => ({
     height: "56px",
   },
   postBtn: {
-    position: "absolute",
-    right: "0px",
+    float: "right",
     width: "160px",
     height: "40px",
     padding: theme.spacing(1),

@@ -5,7 +5,6 @@ import LinkIcon from "@material-ui/icons/Link";
 import MainLayout from "../components/MainLayout";
 import useStyles from "../Style";
 
-
 const Posting = () => {
   const classes = useStyles();
   const [post, setPost] = useState({
@@ -42,7 +41,6 @@ const Posting = () => {
     document.getElementById("fileInput").click();
   };
 
-
   const onPost = () => {
     if (confirm("등록하시겠습니까?")) {
       alert("정상적으로 등록되었습니다.");
@@ -51,86 +49,88 @@ const Posting = () => {
 
   return (
     <MainLayout>
-      <div className="inline">
-        <p className="content-name">글쓰기</p>
-        <Button onClick={onPost} className={classes.postBtn}>
-          등록하기
-        </Button>
-      </div>
-      <div id="posting-content">
-        <FormControl
-          required
-          variant="outlined"
-          className={classes.formControl}
-        >
-          <Select
-            native
-            value={post.categoryName}
-            name="categoryName"
+      <div id="posting-container">
+        <div className="content-title">
+          <p className="content-name">글쓰기</p>
+          <Button onClick={onPost} className={classes.postBtn}>
+            등록하기
+          </Button>
+        </div>
+        <div id="posting-content">
+          <FormControl
+            required
+            variant="outlined"
+            className={classes.formControl}
+          >
+            <Select
+              native
+              value={post.categoryName}
+              name="categoryName"
+              onChange={onChangePost}
+              inputProps={{
+                name: "categoryName",
+              }}
+              className={classes.select}
+            >
+              <option value="" disabled>
+                카테고리를 선택해주세요.
+              </option>
+              <option value="공지사항">공지사항</option>
+              <option value="">None</option>
+              <option value="">None</option>
+            </Select>
+          </FormControl>
+          <TextField
+            id="titleField"
+            placeholder="제목을 입력해주세요."
+            variant="outlined"
+            name="title"
             onChange={onChangePost}
-            inputProps={{
-              name: "categoryName",
-            }}
-            className={classes.select}
-          >
-            <option value="" disabled>
-              카테고리를 선택해주세요.
-            </option>
-            <option value="공지사항">공지사항</option>
-            <option value="">None</option>
-            <option value="">None</option>
-          </Select>
-        </FormControl>
-        <TextField
-          id="titleField"
-          placeholder="제목을 입력해주세요."
-          variant="outlined"
-          name="title"
-          onChange={onChangePost}
-        />
-        <TextField
-          id="contentField"
-          placeholder="내용을 입력해주세요."
-          variant="outlined"
-          rows={20}
-          name="content"
-          onChange={onChangePost}
-          multiline
-        />
-        <div className="posting-attaches">
-          <input
-            accept="image/*"
-            className={classes.input}
-            style={{ display: "none" }}
-            onChange={onChangeImg}
-            multiple
-            id="imageInput"
-            type="file"
           />
-          <Button
+          <TextField
+            id="contentField"
+            placeholder="내용을 입력해주세요."
             variant="outlined"
-            endIcon={<CameraAltOutlinedIcon />}
-            className={classes.attachBtn}
-            onClick={onClickImageInput}
-          >
-            사진추가
-          </Button>
-          <input
-            className={classes.input}
-            style={{ display: "none" }}
-            onChange={onChangeFile}
-            multiple
-            id="fileInput"
-            type="file"
+            rows={20}
+            name="content"
+            onChange={onChangePost}
+            multiline
           />
-          <Button
-            variant="outlined"
-            endIcon={<LinkIcon />}
-            className={classes.attachBtn}
-            onClick={onClickFileInput}
-          >
-            첨부파일
-          </Button>
+          <div className="posting-attaches">
+            <input
+              accept="image/*"
+              className={classes.input}
+              style={{ display: "none" }}
+              onChange={onChangeImg}
+              multiple
+              id="imageInput"
+              type="file"
+            />
+            <Button
+              variant="outlined"
+              endIcon={<CameraAltOutlinedIcon />}
+              className={classes.attachBtn}
+              onClick={onClickImageInput}
+            >
+              사진추가
+            </Button>
+            <input
+              className={classes.input}
+              style={{ display: "none" }}
+              onChange={onChangeFile}
+              multiple
+              id="fileInput"
+              type="file"
+            />
+            <Button
+              variant="outlined"
+              endIcon={<LinkIcon />}
+              className={classes.attachBtn}
+              onClick={onClickFileInput}
+            >
+              첨부파일
+            </Button>
+          </div>
         </div>
       </div>
     </MainLayout>
