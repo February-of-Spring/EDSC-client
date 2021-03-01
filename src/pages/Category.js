@@ -63,9 +63,16 @@ const Category = ({ history }) => {
 
   return (
     <MainLayout>
-      <div className="content-title ">
+      <div className="content-title">
         <p className="content-name">{level2 || level1}</p>
-        <Button className={classes.postBtn} onClick={() => {history.push("/posting")}}>글쓰기</Button>
+        <Button
+          className={classes.postBtn}
+          onClick={() => {
+            history.push("/posting");
+          }}
+        >
+          글쓰기
+        </Button>
       </div>
       {postLists.postList.map((post) => {
         return (

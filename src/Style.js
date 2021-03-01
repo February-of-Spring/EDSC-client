@@ -35,6 +35,11 @@ const useStyles = makeStyles((theme) => ({
     height: "32px",
     padding: theme.spacing(1),
   },
+  commentCard: {
+    width: "880px",
+    height: "160px",
+    marginBottom: "40px",
+  }
 }));
 
 export default useStyles;

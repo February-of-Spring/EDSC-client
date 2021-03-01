@@ -1,9 +1,13 @@
 import { React } from "react";
+import { Card } from "@material-ui/core";
 import MainLayout from "../components/MainLayout";
-//import useStyles from "../Style";
+import greenVector from "../image/greenVector.png";
+import heart from "../image/heart.png";
+import useStyles from "../Style";
+
 
 const Posting = () => {
-  //const classes = useStyles();
+  const classes = useStyles();
 
   const post = {
     id: 6,
@@ -15,7 +19,25 @@ const Posting = () => {
         "https://edsc-s3.s3.ap-northeast-2.amazonaws.com/profile-image/1",
     },
     title: "자유게시판",
-    content: "거품의 모양 모양의 거품",
+    content:
+      "DSC (Developer Student Club)는 Google이 후원하는 대학생 개발자 그룹입니다.\n\n\
+    현재 여러 나라에서 DSC 활동이 일어나고 있으며, DSC Korea는 올해 8월 DSC Lead at Korea의 선발을 통해\
+    정식적으로 활동을 할 수 있게 되었습니다. \n\n\
+     \
+    현재 DSC Korea는 12명의 Lead를 주축으로 12개 대학교에 선발되었으며,\n\
+    Ewha Womans University에서 활동하는 DSC를 저희는 DSC Ewha 라고 명명합니다.\n\n\n\n\n\
+     \
+     \
+     \
+    DSC Ewha's Activity\n\n\
+    \
+    저희 DSC Ewha는 22명의 Member로 구성되어있으며, 프로젝트를 완성하고 싶은 Developer들이 모인 클럽입니다.\n\
+    매주 월요일 8교시에 모임을 진행하며 모임은 아래 구성으로 진행됩니다.\n\n\
+     \
+    1. 멤버별 개인 미니 세미나 : 자신이 공유하고 싶은 개발 지식을 20분 세미나를 통해 전달\n\
+    2. 팀별 회의시간 : 이번주까지 한 일, 다음주에 할 일을 설정합니다.\n\
+    3. 팀별 발표시간 : 팀별 진행사항을 발표하고, 여러 멤버들에게 피드백을 받습니다.\n\n\
+    또한 매주 개발 하면서 Error를 해결하거나, Study 한 내용을 각 팀이 블로그에 포스팅 할 예정입니다.",
     likeCount: 2,
     viewCount: 1,
     createdAt: "2021-02-20T03:38:06.000+00:00",
@@ -104,18 +126,60 @@ const Posting = () => {
       <div id="post">
         <div id="post-categoryname">
           <p>{post.category.name}</p>
+          <img src={greenVector} />
         </div>
-        <div>
-          <h1 id="post-title">{post.title}</h1>
+        <div className="post-title">
+          <h1>{post.title}</h1>
+          <img src={heart}/>
         </div>
         <div id="post-user">
-          <img src={post.user.profileImage} id="profile-image"/>
+          <img src={post.user.profileImage} className="profile-image" />
           <p id="post-user-nickname">{post.user.nickname}</p>
-          <p id="post-createdat">{post.createdAt.substring(0,10)} {post.createdAt.substring(11,19)}</p>
+          <p id="post-createdat">
+            {post.createdAt.substring(0, 10)} {post.createdAt.substring(11, 19)}
+          </p>
         </div>
         <div id="post-content">
-          <p>{post.content}</p>
+          <p>
+            {post.content.split("\n").map((line) => {
+              return (
+                <>
+                  {line}
+                  <br />
+                </>
+              );
+            })}
+          </p>
         </div>
+      </div>
+      <div id="comment-container">
+        <Card className={classes.commentCard} variant="outlined">
+          <p>배꽃나무</p>
+        </Card>
+        {post.commentList.map((comment) => {
+          return (
+            <div className="comment" key={comment.comment.id}>
+              <hr className="comment-line" />
+              <div className="comment-profile">
+                <img
+                  src={comment.comment.user.profileImage}
+                  className="profile-image"
+                />
+              </div>
+              <div className="comment-texts">
+                <h1>{comment.comment.user.nickname}</h1>
+                <p>{comment.comment.content}</p>
+                <p className="createdat">
+                  {comment.comment.createdAt.substring(0, 10)}{" "}
+                  {comment.comment.createdAt.substring(11, 19)}{" "}
+                </p>
+                <button className="reply-btn">
+                  <p className="createdat">답글쓰기</p>
+                </button>
+              </div>
+            </div>
+          );
+        })}
       </div>
     </MainLayout>
   );
