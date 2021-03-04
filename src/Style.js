@@ -39,6 +39,7 @@ const useStyles = makeStyles((theme) => ({
     width: "880px",
     height: "160px",
     marginBottom: "40px",
+    padding: "16px",
   }
 }));
 
