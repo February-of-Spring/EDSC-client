@@ -1,14 +1,12 @@
 import { React } from "react";
-import { Card } from "@material-ui/core";
 import MainLayout from "../components/MainLayout";
+import Comment from "../components/Comment";
 import greenVector from "../image/greenVector.png";
 import heart from "../image/heart.png";
-import useStyles from "../Style";
+import comment from "../image/comment.png";
+import PostComment from "../components/PostComment";
 
-
-const Posting = () => {
-  const classes = useStyles();
-
+const Post = () => {
   const post = {
     id: 6,
     user: {
@@ -130,7 +128,7 @@ const Posting = () => {
         </div>
         <div className="post-title">
           <h1>{post.title}</h1>
-          <img src={heart}/>
+          <img src={heart} />
         </div>
         <div id="post-user">
           <img src={post.user.profileImage} className="profile-image" />
@@ -152,37 +150,31 @@ const Posting = () => {
           </p>
         </div>
       </div>
-      <div id="comment-container">
-        <Card className={classes.commentCard} variant="outlined">
-          <p>배꽃나무</p>
-        </Card>
-        {post.commentList.map((comment) => {
-          return (
-            <div className="comment" key={comment.comment.id}>
-              <hr className="comment-line" />
-              <div className="comment-profile">
-                <img
-                  src={comment.comment.user.profileImage}
-                  className="profile-image"
-                />
-              </div>
-              <div className="comment-texts">
-                <h1>{comment.comment.user.nickname}</h1>
-                <p>{comment.comment.content}</p>
-                <p className="createdat">
-                  {comment.comment.createdAt.substring(0, 10)}{" "}
-                  {comment.comment.createdAt.substring(11, 19)}{" "}
-                </p>
-                <button className="reply-btn">
-                  <p className="createdat">답글쓰기</p>
-                </button>
-              </div>
-            </div>
-          );
-        })}
+      <hr />
+      <div>
+        <div id="comment-title">
+          <img src={comment} id="comment-img" />
+          <p>댓글 {post.commentNum}</p>
+        </div>
+
+        {<PostComment />}
+
+        <div id="commentlist-container">
+          {post.commentList.map((comment) => {
+            return (
+              <>
+                <Comment key={comment.comment.id} comment={comment.comment} />
+                {comment.childNum > 0 &&
+                  comment.childList.map((child) => {
+                    return <Comment key={child.id} comment={child} />;
+                  })}
+              </>
+            );
+          })}
+        </div>
       </div>
     </MainLayout>
   );
 };
 
-export default Posting;
+export default Post;
