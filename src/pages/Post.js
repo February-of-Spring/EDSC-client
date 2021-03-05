@@ -157,20 +157,33 @@ const Post = () => {
           <p>댓글 {post.commentNum}</p>
         </div>
 
-        {<PostComment />}
+        {<PostComment postId={post.id} />}
 
         <div id="commentlist-container">
           {post.commentList.map((comment) => {
             return (
               <>
-                <Comment key={comment.comment.id} comment={comment.comment} />
+                <Comment
+                  key={comment.comment.id}
+                  postId={post.id}
+                  isChild={false}
+                  comment={comment.comment}
+                />
                 {comment.childNum > 0 &&
                   comment.childList.map((child) => {
-                    return <Comment key={child.id} comment={child} />;
+                    return (
+                      <Comment
+                        key={child.id}
+                        postId={post.id}
+                        isChild={true}
+                        comment={child}
+                      />
+                    );
                   })}
               </>
             );
           })}
+          <hr className="comment-line" />
         </div>
       </div>
     </MainLayout>

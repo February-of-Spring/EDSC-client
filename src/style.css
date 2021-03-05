@@ -5,6 +5,7 @@
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
+  vertical-align: middle;
 }
 
 :root {
@@ -97,10 +98,8 @@ nav {
 }
 
 #login-text {
-  vertical-align: center;
   font-weight: bold;
   font-size: 12px;
-  line-height: 16px;
   color: var(--main-color);
 }
 
@@ -317,6 +316,10 @@ nav {
   margin-bottom: 16px;
 }
 
+#comment-title p {
+  font-weight: bold;
+}
+
 #comment-img {
   width: 24px;
   height: 24px;
@@ -328,7 +331,6 @@ nav {
 
 .comment-container {
   display: inline-block;
-  box-sizing: border-box;
   width: 880px;
   height: 160px;
   padding: 16px;
@@ -337,19 +339,14 @@ nav {
   border-color: #bdbdbd;
 }
 
+.comment-container * {
+  display: inline;
+  vertical-align: middle;
+}
+
 .comment-user-nickname {
   font-weight: bold;
   color: #333333;
-}
-
-.checkbox {
-  margin-right: 8px;
-  width: 24px;
-  height: 24px;
-}
-
-.checkbox:checked {
-  color: var(--main-color);
 }
 
 .comment-textarea {
@@ -375,10 +372,33 @@ nav {
   color: white;
 }
 
-.submit-btn:hover {
+.submit-btn:active {
   background-color: #c4c4c4;
   transition: all 0.55s cubic-bezier(0.19, 1, 0.22, 1);
 }
+
+.comment {
+  display: flex;
+}
+
+.comment-line {
+  width: 880px;
+}
+
+.child-arrow-img {
+  margin-top: 16px;
+  width: 24px;
+  height: 24px;
+}
+
+.child-comment {
+  width: 840px;
+  padding: 16px;
+  margin: 16px;
+  background: #f2f2f2;
+  border-radius: 8px;
+}
+
 
 .comment-profile * {
   display: inline-block;
@@ -395,10 +415,6 @@ nav {
   margin-left: 56px;
 }
 
-.comment-texts * {
-  line-height: 24px;
-  margin: 8px 0px;
-}
 
 .comment-bottom * {
   display: inline;
@@ -412,5 +428,5 @@ nav {
 
 .reply-btn {
   margin-left: 16px;
-  background-color: #ffffff;
+  background: none;
 }
