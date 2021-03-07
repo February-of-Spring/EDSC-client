@@ -415,6 +415,10 @@ nav {
   margin-left: 56px;
 }
 
+.comment-texts p {
+  padding: 8px 0px;
+}
+
 
 .comment-bottom * {
   display: inline;

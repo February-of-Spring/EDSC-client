@@ -6,7 +6,7 @@ import downRightArrow from "../image/downRightArrow.png";
 const Comment = ({ postId, isChild, comment }) => {
   const [reply, setReply] = useState(false);
 
-  if (isChild) {
+  if (isChild) { // 답글
     return (
       <>
         <div className="comment">
@@ -33,10 +33,10 @@ const Comment = ({ postId, isChild, comment }) => {
             </div>
           </div>
         </div>
-        {reply && <PostComment postId={postId} parentId={comment.id} />}
+        {reply && <PostComment postId={postId} parentId={comment.id} parentNickname={comment.user.nickname} setReply={setReply}/>}
       </>
     );
-  } else {
+  } else { // 일반 댓글
     return (
       <div>
         <hr className="comment-line" />

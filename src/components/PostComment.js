@@ -2,7 +2,7 @@ import { React, useState } from "react";
 import PropTypes from "prop-types";
 import { FormControlLabel, Checkbox } from "@material-ui/core";
 
-const PostComment = ({ postId, parentId }) => {
+const PostComment = ({ postId, parentId, parentNickname }) => {
   const [comment, setComment] = useState({
     content: "",
     isPublic: true,
@@ -38,7 +38,7 @@ const PostComment = ({ postId, parentId }) => {
         console.log(postId);
         console.log(comment);
       }
-    } else { 
+    } else {
       alert("내용을 입력해주세요.");
     }
   };
@@ -60,14 +60,26 @@ const PostComment = ({ postId, parentId }) => {
   return (
     <div className="comment-container">
       <p className="comment-user-nickname">배꽃나무</p>
-      <textarea
-        className="comment-textarea"
-        rows="2"
-        autoFocus
-        placeholder="소중한 댓글 부탁드려요:)"
-        name="content"
-        onChange={onChangeContent}
-      />
+      {parentId ? (
+        <textarea
+          className="comment-textarea"
+          rows="2"
+          autoFocus
+          placeholder={parentNickname+"님께 대댓글 쓰기"}
+          name="content"
+          onChange={onChangeContent}
+        />
+      ) : (
+        <textarea
+          className="comment-textarea"
+          rows="2"
+          autoFocus
+          placeholder="소중한 댓글 부탁드려요:)"
+          name="content"
+          onChange={onChangeContent}
+        />
+      )}
+
       <FormControlLabel
         control={
           <Checkbox
@@ -89,6 +101,7 @@ const PostComment = ({ postId, parentId }) => {
 PostComment.propTypes = {
   postId: PropTypes.number.isRequired,
   parentId: PropTypes.number,
+  parentNickname: PropTypes.string,
 };
 
 export default PostComment;

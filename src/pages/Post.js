@@ -77,7 +77,7 @@ const Post = () => {
               profileImage:
                 "https://edsc-s3.s3.ap-northeast-2.amazonaws.com/profile-image/1",
             },
-            content: "무슨 뜻이에요?",
+            content: "바람 불면 울렁이는 기분 탓에 나도 모르게 바람 불면 저편에서 그대여 니 모습이 자꾸 겹쳐오 또 울렁이는 기분 탓에 나도 모르게 바람 불면 저편에서 그대여 니 모습이 자꾸 겹쳐",
             isPublic: false,
             createdAt: "2021-02-24T05:05:29.000+00:00",
             modifiedAt: "2021-02-24T05:05:29.000+00:00",
