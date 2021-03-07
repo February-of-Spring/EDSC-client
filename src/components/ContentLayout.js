@@ -1,16 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const Category = ({ children }) => {
-  return (
-    <div id="content">
-      <div id="content-in">{children}</div>
-    </div>
-  );
+const ContentLayout = ({ children }) => {
+  return <div id="content">{children}</div>;
 };
 
-Category.propTypes = {
+ContentLayout.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-export default Category;
+export default ContentLayout;

@@ -6,10 +6,12 @@ import ContentLayout from "./ContentLayout";
 
 const MainLayout = ({ children }) => {
   return (
-    <div className="wrap">
-      <Header />
+    <div id="wrapper">
       <SideBar />
-      <ContentLayout>{children}</ContentLayout>
+      <div id="header-content-wrapper">
+        <Header />
+        <ContentLayout>{children}</ContentLayout>
+      </div>
     </div>
   );
 };
