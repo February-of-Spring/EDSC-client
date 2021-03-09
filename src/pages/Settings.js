@@ -1,8 +1,8 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import settings from "../image/settings.png";
+import MainLayout from "../components/MainLayout";
+import CategoryTable from "../components/CategoryTable";
 
-const SideBar = () => {
+const Settings = () => {
   const categories = [
     {
       id: 1,
@@ -78,45 +78,17 @@ const SideBar = () => {
       child: [],
     },
   ];
-
   return (
-    <nav id="navbar">
-      <ul className="navbar-content">
-        <li className="navbar-main">
-          <p>전체보기</p>
-          <Link to="/category">
-            <img src={settings} id="setting" />
-          </Link>
-        </li>
-        {categories.map((category) => {
-          return (
-            <div key={category.id}>
-              <hr className="navbar-hr" />
-              <li className="navbar-main">
-                <p>{category.parent.name}</p>
-              </li>
-              {category.child.map((child) => {
-                return (
-                  <li key={child.id}>
-                    {
-                      <Link
-                        className="navbar-sub"
-                        to={`/category/${category.parent.name}/${child.name}`}
-                      >
-                        <p>
-                          {child.name} ({child.postNum})
-                        </p>
-                      </Link>
-                    }
-                  </li>
-                );
-              })}
-            </div>
-          );
-        })}
-      </ul>
-    </nav>
+    <MainLayout>
+      <div className="page-title">카테고리 관리</div>
+      <div className="add-category-btn">
+        <p>카테고리 추가 +</p>
+      </div>
+      {categories.map((category) => {
+        return <CategoryTable key={category.parent.id} category={category} />;
+      })}
+    </MainLayout>
   );
 };
 
-export default SideBar;
+export default Settings;
