@@ -39,7 +39,7 @@ const App = () => {
             <Route path="/findpw" exact component={FindPW} />
             <Route path="/posting" exact component={Posting} />
             {/*카테고리 관리 */}
-            <Route path="/category" component={Settings} />
+            <Route path="/category" exact component={Settings} />
             {/* 게시판 조회 */}
             <Route path="/category/:level1/:level2" component={Category} />
             <Route path="/category/:level1" component={Category} />
