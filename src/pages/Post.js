@@ -1,4 +1,4 @@
-import { React } from "react";
+import { React, useState, useCallback} from "react";
 import MainLayout from "../components/MainLayout";
 import Comment from "../components/Comment";
 import greenVector from "../image/greenVector.png";
@@ -7,6 +7,10 @@ import comment from "../image/comment.png";
 import PostComment from "../components/PostComment";
 
 const Post = () => {
+  const [reply, setReply] = useState(0); 
+
+  const postReply = useCallback((parentId) => {setReply(parentId)}, []);
+
   const post = {
     id: 6,
     user: {
@@ -165,21 +169,21 @@ const Post = () => {
               <>
                 <Comment
                   key={comment.comment.id}
-                  postId={post.id}
                   isChild={false}
                   comment={comment.comment}
+                  postReply={postReply}
                 />
                 {comment.childNum > 0 &&
                   comment.childList.map((child) => {
                     return (
                       <Comment
                         key={child.id}
-                        postId={post.id}
                         isChild={true}
                         comment={child}
                       />
                     );
                   })}
+                 {reply===comment.comment.id && <PostComment parentId={comment.comment.id} parentNickname={comment.comment.user.nickname}/>}
               </>
             );
           })}
