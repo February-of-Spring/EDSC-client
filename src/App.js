@@ -12,6 +12,7 @@ import {
   FindID,
   FindPW,
   Settings,
+  MyPage,
 } from "./pages/index";
 
 const theme = createMuiTheme({
@@ -46,6 +47,8 @@ const App = () => {
             {/* 게시물 */}
             <Route path="/posts/:postid" component={Post} />{" "}
             {/* 게시물 조회하기 */}
+            {/*유저 정보 조회하기*/}
+            <Route path="/users/:id" component={MyPage} />
           </Switch>
         </div>
       </Router>

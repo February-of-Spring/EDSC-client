@@ -35,7 +35,7 @@ const useStyles = makeStyles((theme) => ({
   },
   table: {
     width: "880px",
-    marginTop: "40px",
+    margin: "40px 0",
     borderRadius: "8px",
   },
   mainRow: {
@@ -64,6 +64,26 @@ const useStyles = makeStyles((theme) => ({
     boxShadow: "0px 0px 4px rgba(0, 0, 0, 0.2)",
     borderRadius: "8px",
     marginLeft: "8px",
+  },
+  profileCard: {
+    borderRadius: "8px",
+    boxShadow: "0px 0px 4px rgba(0, 0, 0, 0.1)",
+    padding: 0,
+    marginTop: "16px",
+    marginBottom: "32px",
+    width: "430px",
+    height: "176px",
+    display: "flex",
+    alignItems: "center",
+  },
+  postCard: {
+    width: "880px",
+    height: "176px",
+    borderRadius: "8px",
+    boxShadow: "0px 0px 4px rgba(0, 0, 0, 0.1)",
+    padding: "32px",
+    marginTop: "16px",
+    marginBottom: "48px",
   },
 }));
 

@@ -88,6 +88,12 @@ nav {
   outline: 0;
 }
 
+#logged-in-profile {
+  width: 48px;
+  height: 48px;
+  margin-left: 560px;
+}
+
 #login-btn {
   width: 70px;
   height: 32px;
@@ -436,6 +442,7 @@ nav {
 /*Settings*/
 .page-title {
   margin-top: 32px;
+  margin-bottom: 32px;
   font-weight: bold;
   font-size: 32px;
   line-height: 40px;
@@ -494,7 +501,7 @@ nav {
 }
 
 .main-categoryname {
-  width: 250px;
+  width: 500px;
   margin-left: 30px;
   font-weight: bold;
   font-size: 20px;
@@ -525,10 +532,96 @@ nav {
 }
 
 .sub-categoryname {
+  width: 500px;
   font-weight: bold;
   font-size: 16px;
   line-height: 24px;
-  width: 250px;
   margin-left: 30px;
   display: inline-block;
+}
+
+/*MyPage*/
+.info-header * {
+  display: inline;
+}
+
+.title-info {
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 40px;
+  color: var(--main-color);
+}
+
+#logout-btn {
+  width: 70px;
+  height: 32px;
+  background: #ffffff;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  margin-left: 285px;
+}
+
+#logout-btn > p {
+  font-weight: bold;
+  font-size: 12px;
+  color: var(--main-color);
+}
+
+#mypage-profile {
+  margin-left: 8px;
+  width: 112px;
+  height: 112px;
+}
+
+#user-info {
+  display: flex;
+  flex-direction: column;
+  margin-left: 16px;
+}
+
+#user-info div:nth-child(1) {
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 24px;
+  color: var(--main-color);
+  margin-bottom: 16px;
+}
+
+#user-info div:nth-child(2) {
+  font-size: 20px;
+  line-height: 32px;
+}
+
+.myposts-header * {
+  display: inline;
+}
+
+.myposts-header > p {
+  float: right;
+  font-weight: bold;
+  color: #828282;
+  cursor: pointer;
+}
+
+.myposts-header > img {
+  float: right;
+  cursor: pointer;
+}
+
+.mypost-card > div:nth-child(1) {
+  display: inline;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.mypost-card > div:nth-child(2) {
+  float: right;
+  font-size: 16px;
+  line-height: 24px;
+  color: #bdbdbd;
+}
+
+.mypost-card > div:nth-child(3) {
+  margin-top: 16px;
 }
